@@ -2,989 +2,692 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Salma 🎂💗</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For Salmu ❤️ | Birthday Surprise</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 
-html,body{
-  width:100%;
-  min-height:100%;
-}
-
 body{
-  overflow-x:hidden;
+  font-family:Arial,sans-serif;
+  min-height:100vh;
+  overflow:hidden;
+  background:#080414;
   color:white;
-  font-family:Arial,"Noto Sans Bengali",sans-serif;
-  background:
-    radial-gradient(circle at 15% 15%,#ff9bc9 0,transparent 28%),
-    radial-gradient(circle at 85% 75%,#9d8cff 0,transparent 30%),
-    linear-gradient(135deg,#160b27,#32142e,#10152d);
 }
 
 .page{
-  min-height:100vh;
+  position:absolute;
+  inset:0;
   display:none;
   justify-content:center;
   align-items:center;
-  padding:25px 14px;
   text-align:center;
-  position:relative;
+  padding:25px;
+  overflow:hidden;
 }
 
 .page.active{
   display:flex;
-  animation:enter .8s ease;
+  animation:pageIn .8s ease;
 }
 
-@keyframes enter{
-  from{opacity:0;transform:scale(.94) translateY(20px)}
-  to{opacity:1;transform:scale(1) translateY(0)}
+@keyframes pageIn{
+  from{opacity:0;transform:scale(1.04)}
+  to{opacity:1;transform:scale(1)}
+}
+
+.bg{
+  position:absolute;
+  inset:0;
+  background:
+  radial-gradient(circle at 20% 20%,#ff7eb355,transparent 30%),
+  radial-gradient(circle at 80% 70%,#9b5cff55,transparent 35%),
+  linear-gradient(135deg,#12051f,#351047,#10051d);
+  z-index:-2;
+}
+
+.stars{
+  position:absolute;
+  inset:0;
+  background-image:
+  radial-gradient(circle,#ffffff 1px,transparent 1px);
+  background-size:55px 55px;
+  opacity:.25;
+  animation:stars 12s linear infinite;
+}
+
+@keyframes stars{
+  from{transform:translateY(0)}
+  to{transform:translateY(55px)}
 }
 
 .card{
-  width:min(94%,680px);
-  padding:30px 20px;
-  border-radius:32px;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.22);
+  width:min(92vw,650px);
+  padding:32px 22px;
+  border:1px solid #ffffff30;
+  border-radius:30px;
+  background:#ffffff12;
   backdrop-filter:blur(18px);
-  box-shadow:0 25px 80px rgba(0,0,0,.45);
+  box-shadow:0 20px 80px #0008;
 }
 
 h1{
-  font-size:clamp(30px,8vw,58px);
-  margin:12px 0 18px;
-  text-shadow:0 0 30px rgba(255,170,220,.8);
+  font-size:clamp(32px,8vw,65px);
+  margin-bottom:15px;
 }
 
 h2{
-  font-size:clamp(25px,6vw,40px);
-  margin-bottom:18px;
+  font-size:clamp(25px,6vw,45px);
+  margin-bottom:15px;
 }
 
 p{
-  font-size:18px;
-  line-height:1.75;
-}
-
-.cute{
-  font-size:75px;
-  animation:bounce 2s infinite;
-}
-
-@keyframes bounce{
-  50%{transform:translateY(-10px)}
-}
-
-.btn{
-  border:0;
-  border-radius:50px;
-  padding:14px 28px;
-  margin:10px 5px;
+  line-height:1.8;
+  color:#f5eaff;
   font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
-  color:#54203f;
-  background:linear-gradient(135deg,#fff,#ffc6e1);
-  box-shadow:0 10px 30px rgba(255,130,190,.3);
-  transition:.25s;
-}
-
-.btn:hover{
-  transform:translateY(-3px) scale(1.04);
-}
-
-.pink{
-  background:linear-gradient(135deg,#ff62a8,#ffb7d8);
-  color:white;
 }
 
 .small{
   font-size:14px;
-  opacity:.7;
-  margin-top:15px;
+  opacity:.75;
 }
 
-/* VIDEO */
-.intro-video{
+button{
+  border:0;
+  padding:14px 25px;
+  border-radius:999px;
+  margin:10px 5px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  background:linear-gradient(135deg,#ff5caa,#a66cff);
+  color:white;
+  box-shadow:0 8px 25px #ff4fa655;
+}
+
+button:active{transform:scale(.94)}
+
+video{
   width:100%;
-  max-height:75vh;
-  object-fit:contain;
-  border-radius:25px;
+  max-height:48vh;
+  border-radius:22px;
+  margin:15px 0;
   background:#000;
-  box-shadow:0 20px 60px rgba(0,0,0,.55);
 }
 
-/* GALLERY */
-.gallery{
+.photos{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:12px;
-  margin:20px 0;
+  margin:18px 0;
 }
 
-.gallery img{
+.photos img{
   width:100%;
-  height:230px;
+  aspect-ratio:1;
   object-fit:cover;
-  border-radius:20px;
-  border:2px solid rgba(255,255,255,.3);
-  box-shadow:0 12px 30px rgba(0,0,0,.35);
+  border-radius:18px;
+  box-shadow:0 10px 30px #0008;
   transition:.4s;
 }
 
-.gallery img:hover{
+.photos img:hover{
   transform:scale(1.04) rotate(1deg);
 }
 
-/* NOTE */
-.note{
-  background:linear-gradient(135deg,#fffafd,#ffe8f2);
-  color:#54203f;
-  border-radius:24px;
-  padding:27px 21px;
-  margin:20px auto;
-  max-width:580px;
-  text-align:left;
-  box-shadow:0 20px 50px rgba(0,0,0,.3);
+.cake{
+  font-size:100px;
+  animation:bounce 1.5s infinite;
 }
 
-.note h3{
-  text-align:center;
-  font-size:25px;
-  margin-bottom:15px;
+@keyframes bounce{
+  50%{transform:translateY(-15px)}
 }
 
-/* GIFT */
+.cat{
+  font-size:110px;
+  animation:cat 2s infinite;
+}
+
+@keyframes cat{
+  50%{transform:rotate(5deg) scale(1.08)}
+}
+
 .gift{
-  font-size:115px;
+  font-size:130px;
   cursor:pointer;
-  animation:gift 1.4s infinite;
+  animation:gift 1.5s infinite;
 }
 
 @keyframes gift{
-  50%{transform:scale(1.08) rotate(-4deg)}
+  50%{transform:scale(1.1) rotate(3deg)}
 }
 
-/* CAKE */
-.cake{
-  font-size:130px;
-  animation:cake 1.5s infinite;
+.letter{
+  text-align:left;
+  padding:24px;
+  border-radius:20px;
+  background:#ffffff0e;
+  border:1px solid #ffffff20;
+  line-height:1.9;
 }
 
-@keyframes cake{
-  50%{transform:scale(1.07)}
-}
-
-/* FLOATING */
-.float{
-  position:fixed;
-  bottom:-50px;
-  z-index:50;
-  pointer-events:none;
-  animation:up linear forwards;
-}
-
-@keyframes up{
-  to{
-    transform:translateY(-115vh) rotate(360deg);
-    opacity:0;
-  }
-}
-
-/* FIREWORK SKY */
-.sky{
-  height:390px;
-  width:100%;
-  border-radius:25px;
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 50% 35%,#29256c,#080817 70%);
-}
-
-.boom{
-  position:absolute;
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:white;
-  box-shadow:
-    0 0 12px white,
-    0 0 30px #ff75c8,
-    0 0 60px #9d8cff;
-  animation:boom 2s infinite;
-}
-
-.b1{left:25%;top:30%}
-.b2{left:70%;top:25%;animation-delay:.6s}
-.b3{left:50%;top:50%;animation-delay:1.1s}
-
-@keyframes boom{
-  0%,100%{transform:scale(.1);opacity:.2}
-  50%{transform:scale(14);opacity:1}
-}
-
-/* STARS */
-.stars{
-  font-size:25px;
-  letter-spacing:8px;
-  animation:twinkle 1.5s infinite alternate;
-}
-
-@keyframes twinkle{
-  from{opacity:.35}
-  to{opacity:1}
-}
-
-/* BIG HEART */
-.big-heart{
-  font-size:125px;
+.bigheart{
+  font-size:110px;
   animation:heart 1s infinite;
 }
 
 @keyframes heart{
-  50%{transform:scale(1.17)}
+  50%{transform:scale(1.2)}
 }
 
-/* BALLOONS */
-.balloons{
-  font-size:65px;
-  line-height:1.5;
-}
-
-/* FLOWERS */
-.flowers{
-  font-size:62px;
-  line-height:1.6;
-}
-
-/* CAT */
-.cat{
+.moon{
   font-size:100px;
-  animation:cat 1.8s infinite;
+  margin-bottom:20px;
 }
 
-@keyframes cat{
-  50%{transform:rotate(4deg) translateY(-8px)}
+#fx{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:99;
 }
 
-.video-box{
-  margin-top:18px;
+.particle{
+  position:absolute;
+  font-size:24px;
+  animation:fall 3s linear forwards;
 }
 
-.video-box video{
-  width:100%;
-  border-radius:22px;
-  background:#000;
-  margin:8px 0;
+@keyframes fall{
+  from{
+    transform:translateY(-50px) rotate(0);
+    opacity:1;
+  }
+  to{
+    transform:translateY(110vh) rotate(720deg);
+    opacity:0;
+  }
 }
 
-/* candle */
-.candle{
-  font-size:110px;
-  animation:candle 1s infinite alternate;
+.firework{
+  position:absolute;
+  font-size:35px;
+  animation:boom 1.8s ease-out forwards;
 }
 
-@keyframes candle{
-  from{filter:drop-shadow(0 0 5px #ffca68)}
-  to{filter:drop-shadow(0 0 30px #ff72b6)}
+@keyframes boom{
+  0%{transform:scale(.1);opacity:1}
+  70%{transform:scale(2);opacity:1}
+  100%{transform:scale(4);opacity:0}
+}
+
+.type{
+  min-height:100px;
+  font-size:20px;
+  line-height:1.8;
+}
+
+.final{
+  font-size:clamp(35px,10vw,75px);
+  background:linear-gradient(90deg,#ff77bd,#fff,#b77cff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.progress{
+  position:fixed;
+  top:10px;
+  left:10px;
+  right:10px;
+  height:4px;
+  background:#ffffff20;
+  z-index:200;
+  border-radius:20px;
+}
+
+.bar{
+  height:100%;
+  width:5%;
+  background:linear-gradient(90deg,#ff65b3,#a875ff);
+  border-radius:20px;
+  transition:.5s;
 }
 </style>
 </head>
 
 <body>
 
-<!-- MUSIC -->
-<audio id="music" src="./song.mp3" loop preload="auto"></audio>
+<div class="progress"><div class="bar" id="bar"></div></div>
+<div id="fx"></div>
 
+<audio id="music" loop>
+  <source src="./song.mp3" type="audio/mpeg">
+</audio>
 
-<!-- PAGE 1 -->
-<section class="page active" id="p1">
-  <div class="card">
+<audio id="voice">
+  <source src="./birthday-voice.mp3" type="audio/mpeg">
+</audio>
 
-    <p class="small">A little surprise is waiting for you... ✨</p>
+<!-- 1 -->
+<section class="page active">
+<div class="bg"></div><div class="stars"></div>
+<div class="card">
+  <p class="small">A little surprise prepared specially for...</p>
+  <h1>Salmu ❤️</h1>
 
-    <!-- YOUR VIDEO -->
-    <video
-      class="intro-video"
-      controls
-      playsinline
-      preload="metadata">
-      <source src="./birthday-intro.mp4" type="video/mp4">
-      তোমার browser ভিডিওটি চালাতে পারছে না।
-    </video>
+  <video controls playsinline>
+    <source src="./birthday-intro.mp4" type="video/mp4">
+  </video>
 
-    <h2 style="margin-top:20px">
-      🎀 For Salma 🎀
-    </h2>
-
-    <button class="btn pink" onclick="startBirthday()">
-      Continue → 💗
-    </button>
-
-  </div>
+  <p>এই ছোট্ট journey-টা শেষ পর্যন্ত দেখবে? ✨</p>
+  <button onclick="start()">Open My Surprise 🎁</button>
+</div>
 </section>
 
-
-<!-- PAGE 2 -->
-<section class="page" id="p2">
-  <div class="card">
-    <div class="cute">🎀✨</div>
-
-    <h1>আজকের দিনটা আলাদা... 🥹</h1>
-
-    <p>
-      কারণ আজ একজন খুব special মানুষের Birthday। 💗
-    </p>
-
-    <p style="margin-top:15px">
-      Ready for your birthday surprise? 🎂
-    </p>
-
-    <button class="btn pink" onclick="go(3)">
-      I'm Ready 🎀
-    </button>
-  </div>
+<!-- 2 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <h2>আজকের দিনটা একটু আলাদা... ✨</h2>
+  <p>
+    কারণ আজকের দিনটা শুধু একটা তারিখ না।<br>
+    আজ এমন একজন মানুষের জন্মদিন,<br>
+    যে নিজের অজান্তেই অনেক সুন্দর মুহূর্তের কারণ হয়ে গেছে।
+  </p>
+  <button onclick="next()">Continue ❤️</button>
+</div>
 </section>
 
-
-<!-- PAGE 3 -->
-<section class="page" id="p3">
-  <div class="card">
-
-    <div class="cake">🎂</div>
-
-    <h1>Happy Birthday</h1>
-
-    <h1 style="font-size:clamp(38px,10vw,70px)">
-      Salma 💗
-    </h1>
-
-    <div class="stars">✦ ✧ ✦ ✧ ✦</div>
-
-    <p style="margin-top:18px">
-      তোমার আজকের দিনটা হাসি আর সুন্দর মুহূর্তে ভরে উঠুক। 🌸
-    </p>
-
-    <button class="btn pink" onclick="go(4)">
-      Next → 🐱
-    </button>
-
-  </div>
+<!-- 3 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <div class="cake">🎂</div>
+  <h2>Happy Birthday Salmu!</h2>
+  <p>আজকের পুরো website-টাই তোমার জন্য।</p>
+  <button onclick="celebrate();next()">Make It Special ✨</button>
+</div>
 </section>
 
-
-<!-- PAGE 4 -->
-<section class="page" id="p4">
-  <div class="card">
-
-    <div class="cat">🐱🎀</div>
-
-    <h2>Cute Birthday Cat 🐱</h2>
-
-    <p>
-      Birthday-তে একটা cute visitor এসেছে তোমার জন্য। 🫠💗
-    </p>
-
-    <div class="video-box">
-      <video controls playsinline preload="metadata">
-        <source src="./cat1.mp4" type="video/mp4">
-      </video>
-
-      <video controls playsinline preload="metadata">
-        <source src="./cat2.mp4" type="video/mp4">
-      </video>
-    </div>
-
-    <button class="btn pink" onclick="go(5)">
-      Next → 🎈
-    </button>
-
-  </div>
+<!-- 4 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <div class="cat">🐱🎀</div>
+  <h2>Birthday Kitty এসেছে! 🐾</h2>
+  <p>“আজ Salmu-র birthday! সবাই party-তে আসো!”</p>
+  <button onclick="next()">Next 🐾</button>
+</div>
 </section>
 
-
-<!-- PAGE 5 -->
-<section class="page" id="p5">
-  <div class="card">
-
-    <div class="balloons">🎈🎈🎈</div>
-
-    <h1>Birthday Party! 🎉</h1>
-
-    <p>
-      আজ শুধু হাসি, happiness আর celebration! 🥳
-    </p>
-
-    <div class="balloons">
-      🎈🎊🎈<br>
-      🎉🎈🎉
-    </div>
-
-    <button class="btn pink" onclick="celebrate();go(6)">
-      Next → 🎁
-    </button>
-
-  </div>
+<!-- 5 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <h2>Balloon Party 🎈</h2>
+  <div style="font-size:80px">🎈🎈🎈</div>
+  <p>আজ আকাশটাও যেন তোমার birthday celebrate করছে।</p>
+  <button onclick="balloons();next()">Next 🎈</button>
+</div>
 </section>
 
-
-<!-- PAGE 6 -->
-<section class="page" id="p6">
-  <div class="card">
-
-    <h2>একটা Mystery Gift আছে... 🎁</h2>
-
-    <div class="gift" onclick="openGift()">
-      🎁
-    </div>
-
-    <div id="giftMessage" style="display:none">
-      <h1>Surprise! 💗</h1>
-      <p>
-        এই gift-এর ভিতরে শুধু একটা জিনিস আছে—
-        একটা সুন্দর Birthday memory। 🫠
-      </p>
-    </div>
-
-    <button class="btn pink" onclick="go(7)">
-      Next → 🕯️
-    </button>
-
-  </div>
+<!-- 6 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <div class="gift" onclick="openGift()">🎁</div>
+  <h2>একটা Gift তোমার জন্য</h2>
+  <p id="giftText">Gift box-এ tap করো...</p>
+  <button id="giftNext" style="display:none" onclick="next()">Open Next Surprise ✨</button>
+</div>
 </section>
 
-
-<!-- PAGE 7 -->
-<section class="page" id="p7">
-  <div class="card">
-
-    <div class="candle">🕯️🎂🕯️</div>
-
-    <h1>Make A Wish ✨</h1>
-
-    <p>
-      চোখ বন্ধ করে একটা সুন্দর wish করো... 🌙
-    </p>
-
-    <p style="margin-top:15px">
-      তারপর এই button-এ click করো। 💗
-    </p>
-
-    <button class="btn pink" onclick="wish()">
-      Wish Made ✨
-    </button>
-
-  </div>
+<!-- 7 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <div style="font-size:100px">🕯️🎂🕯️</div>
+  <h2>Make A Wish 🌟</h2>
+  <p>একটা wish করো... তারপর Next চাপো।</p>
+  <button onclick="wish();next()">Wish Made ✨</button>
+</div>
 </section>
 
-
-<!-- PAGE 8 -->
-<section class="page" id="p8">
-  <div class="card">
-
-    <div class="cute">📸💗</div>
-
-    <h2>Beautiful Memories</h2>
-
-    <p>
-      কিছু ছবি, কিছু মুহূর্ত, কিছু স্মৃতি... 🌸
-    </p>
-
-    <div class="gallery">
-      <img src="./salma1.jpg" alt="Memory 1">
-      <img src="./salma2.jpg" alt="Memory 2">
-      <img src="./salma3.jpg" alt="Memory 3">
-      <img src="./salma4.jpg" alt="Memory 4">
-    </div>
-
-    <button class="btn pink" onclick="go(9)">
-      Next → 🌸
-    </button>
-
+<!-- 8 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <h2>Some Beautiful Memories 📸</h2>
+  <div class="photos">
+    <img src="./salma1.jpg">
+    <img src="./salma2.jpg">
+    <img src="./salma3.jpg">
+    <img src="./salma4.jpg">
   </div>
+  <button onclick="next()">Keep Going ❤️</button>
+</div>
 </section>
 
-
-<!-- PAGE 9 -->
-<section class="page" id="p9">
-  <div class="card">
-
-    <div class="flowers">
-      🌸🌷🌹<br>
-      🌺💐🌸<br>
-      🌹🌷🌺
-    </div>
-
-    <h1>Flowers For You 🌸</h1>
-
-    <p>
-      এই ফুলগুলোর মতোই তোমার দিনটা সুন্দর হোক। 🦋
-    </p>
-
-    <button class="btn pink" onclick="flowerRain();go(10)">
-      Next → 💌
-    </button>
-
-  </div>
+<!-- 9 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <div style="font-size:90px">🌹🌷🌸</div>
+  <h2>Flowers For You</h2>
+  <p>বাস্তবে ফুল দিতে না পারলেও,<br>এই virtual ফুলগুলো আজ তোমার জন্য।</p>
+  <button onclick="flowers();next()">Next 🌸</button>
+</div>
 </section>
 
-
-<!-- PAGE 10 -->
-<section class="page" id="p10">
-  <div class="card">
-
-    <div class="cute">💌🌸</div>
-
-    <h2>Birthday Letter</h2>
-
-    <div class="note">
-
-      <h3>💌 For My Love — Salma</h3>
-
-      <p>
-        প্রিয় Salma, ❤️
-        <br><br>
-
-        আজ তোমার Birthday, তাই তোমার জন্য এই ছোট্ট
-        surprise-টা তৈরি করা। 🫠💗
-        <br><br>
-
-        আমি হয়তো সবসময় মনের কথাগুলো সুন্দর করে
-        বলতে পারি না, কিন্তু তুমি আমার কাছে সত্যিই
-        অনেক special একজন মানুষ।
-        <br><br>
-
-        তোমার হাসি, তোমার সাথে কথা বলা আর
-        ছোট ছোট সুন্দর মুহূর্তগুলো আমার কাছে
-        অনেক মূল্যবান। 🌸
-        <br><br>
-
-        আজকের এই বিশেষ দিনে আমার একটাই wish—
-        তুমি সবসময় ভালো থাকো, হাসিখুশি থাকো
-        আর তোমার জীবনের প্রতিটা নতুন বছর
-        আরও সুন্দর হোক। ✨
-        <br><br>
-
-        <b>
-        Happy Birthday, My Special Person. 🎂💗
-        </b>
-
-        <br><br>
-
-        ভালো থেকো সবসময়। 🌷
-        <br><br>
-
-        <b>— তোমার Saju 🫠❤️</b>
-      </p>
-
-    </div>
-
-    <button class="btn pink" onclick="go(11)">
-      Next → 🎬
-    </button>
-
+<!-- 10 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <h2>একটা ছোট্ট Letter 💌</h2>
+  <div class="letter">
+    প্রিয় Salmu,<br><br>
+    আজ তোমার birthday। তাই আজকের দিনে তোমার জন্য
+    শুধু একটা wish না, একটা সুন্দর স্মৃতিও রেখে যেতে চেয়েছিলাম।
+    <br><br>
+    তোমার হাসি, তোমার ভালো থাকা আর তোমার সুন্দর দিনগুলো—
+    এগুলোই হোক এই নতুন বছরের সবচেয়ে সুন্দর অংশ।
+    <br><br>
+    Happy Birthday, Salmu. ❤️
+    <br><br>
+    — Saju
   </div>
+  <button onclick="next()">Next 💌</button>
+</div>
 </section>
 
-
-<!-- PAGE 11 -->
-<section class="page" id="p11">
-  <div class="card">
-
-    <div class="cute">🎬💗</div>
-
-    <h2>Another Birthday Surprise 🎬</h2>
-
-    <p>
-      এবার তোমার জন্য আরও কিছু video memory... 🥰
-    </p>
-
-    <div class="video-box">
-
-      <video controls playsinline preload="metadata">
-        <source src="./love1.mp4" type="video/mp4">
-      </video>
-
-      <video controls playsinline preload="metadata">
-        <source src="./love2.mp4" type="video/mp4">
-      </video>
-
-    </div>
-
-    <button class="btn pink" onclick="go(12)">
-      Next → 🦋
-    </button>
-
-  </div>
+<!-- 11 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <h2>Video Surprise 🎥</h2>
+  <video controls playsinline>
+    <source src="./love1.mp4" type="video/mp4">
+  </video>
+  <video controls playsinline>
+    <source src="./love2.mp4" type="video/mp4">
+  </video>
+  <button onclick="next()">Next ❤️</button>
+</div>
 </section>
 
-
-<!-- PAGE 12 -->
-<section class="page" id="p12">
-  <div class="card">
-
-    <div style="font-size:90px">
-      🦋🌸🦋
-    </div>
-
-    <h1>Magical Moment ✨</h1>
-
-    <p>
-      কিছু মুহূর্ত explain করার দরকার হয় না—
-      শুধু সুন্দর লাগে। 💗
-    </p>
-
-    <div style="font-size:55px;margin:25px 0">
-      💕 ✨ 🦋 ✨ 💕
-    </div>
-
-    <button class="btn pink" onclick="go(13)">
-      Next → 🌌
-    </button>
-
-  </div>
+<!-- 12 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <div class="bigheart">❤️</div>
+  <h2>Love Emoji Surprise</h2>
+  <p>একটা ছোট্ট heart থেকে পুরো screen...</p>
+  <button onclick="hearts();next()">Surprise Me ❤️</button>
+</div>
 </section>
 
-
-<!-- PAGE 13 -->
-<section class="page" id="p13">
-  <div class="card">
-
-    <div class="stars">
-      ✦ ✧ ✦ ✧ ✦
-    </div>
-
-    <h1>Birthday Night 🌌</h1>
-
-    <div style="font-size:100px">
-      🌙
-    </div>
-
-    <p>
-      রাতের আকাশের তারাগুলোর মতো
-      তোমার future-ও আলোয় ভরে উঠুক। ✨
-    </p>
-
-    <div style="font-size:40px;margin-top:20px">
-      ⭐ ⭐ ✨ ⭐ ⭐
-    </div>
-
-    <button class="btn pink" onclick="go(14)">
-      Next → 🎆
-    </button>
-
-  </div>
+<!-- 13 -->
+<section class="page">
+<div class="bg"></div><div class="stars"></div>
+<div class="card">
+  <div class="moon">🌙</div>
+  <h2>Make One More Wish...</h2>
+  <p>
+    একটু চুপ করে একটা wish করো।<br>
+    আজকের রাতের আকাশ তোমার wish শুনুক। ✨
+  </p>
+  <button onclick="starsRain();next()">My Wish Is Ready 🌟</button>
+</div>
 </section>
 
-
-<!-- PAGE 14 -->
-<section class="page" id="p14">
-  <div class="card">
-
-    <h1>Grand Birthday Fireworks 🎆</h1>
-
-    <div class="sky">
-      <div class="boom b1"></div>
-      <div class="boom b2"></div>
-      <div class="boom b3"></div>
-
-      <div style="
-        position:absolute;
-        bottom:20px;
-        left:0;
-        right:0;
-        font-size:50px;
-      ">
-        🌃✨🌙✨🌃
-      </div>
-    </div>
-
-    <p style="margin-top:20px">
-      This night is for your special day. 🎂💗
-    </p>
-
-    <button class="btn pink" onclick="celebrate();go(15)">
-      Final Surprise → ❤️
-    </button>
-
-  </div>
+<!-- 14 -->
+<section class="page">
+<div class="bg"></div><div class="stars"></div>
+<div class="card">
+  <h2>One More Thing... 🎆</h2>
+  <p>তোমার birthday celebration এখনো শেষ হয়নি!</p>
+  <div style="font-size:90px">🎆🎇🎆</div>
+  <button onclick="fireworks();next()">Start The Celebration 🎆</button>
+</div>
 </section>
 
-
-<!-- PAGE 15 -->
-<section class="page" id="p15">
-  <div class="card">
-
-    <div class="big-heart">❤️</div>
-
-    <div class="stars">✦ ✧ ✦ ✧ ✦</div>
-
-    <h1>Happy Birthday, Salma 🎂</h1>
-
-    <div class="note">
-
-      <h3>💗 Special For You</h3>
-
-      <p>
-        আজকের পুরো surprise journey-টা
-        তোমার special day-টাকে একটু বেশি memorable
-        করার জন্য। 🌸
-        <br><br>
-
-        Cake, flowers, memories, videos, stars
-        আর fireworks—সবকিছুর শেষে একটা কথাই:
-        <br><br>
-
-        <b>
-        তুমি সত্যিই একজন special মানুষ। ❤️
-        </b>
-
-        <br><br>
-
-        তোমার নতুন বছরটা হোক
-        অনেক happiness, সুন্দর memories,
-        success আর হাসিতে ভরা। ✨
-        <br><br>
-
-        তোমার সব সুন্দর wish পূরণ হোক। 🌷
-        <br><br>
-
-        <b>
-        HAPPY BIRTHDAY MY SPECIAL PERSON! 🎂💗
-        </b>
-
-        <br><br>
-
-        <b>— With lots of love, Saju 🫠❤️</b>
-      </p>
-
-    </div>
-
-    <div style="font-size:48px">
-      🎂💗🌸🦋🎁🎆
-    </div>
-
-    <button class="btn pink" onclick="restart()">
-      Replay Birthday Story 🔄
-    </button>
-
-  </div>
+<!-- 15 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <h2>Big Celebration 🎉</h2>
+  <div style="font-size:75px">🎂🎈🎁🎉</div>
+  <h1>Happy Birthday!</h1>
+  <h2>Salmu ❤️</h2>
+  <button onclick="celebrate();next()">Next Surprise ✨</button>
+</div>
 </section>
 
+<!-- 16 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <h2>একটা কথা বলা বাকি... 💭</h2>
+  <div class="type" id="typing"></div>
+  <button onclick="typeMessage();this.style.display='none'">Read It 💌</button>
+  <br>
+  <button onclick="next()">Next ❤️</button>
+</div>
+</section>
+
+<!-- 17 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <h2>Our Little Memories 📸</h2>
+  <div class="photos">
+    <img src="./salma1.jpg">
+    <img src="./salma2.jpg">
+    <img src="./salma3.jpg">
+    <img src="./salma4.jpg">
+  </div>
+  <p>কিছু ছবি শুধু ছবি না... কিছু ছবি একটা পুরো memory। ❤️</p>
+  <button onclick="next()">Next ✨</button>
+</div>
+</section>
+
+<!-- 18 -->
+<section class="page">
+<div class="bg"></div><div class="card">
+  <div class="gift" onclick="finalGift()">🎁</div>
+  <h2>Final Gift Box</h2>
+  <p id="finalGiftText">এবার একটু বড় surprise...</p>
+  <button id="finalGiftBtn" style="display:none" onclick="next()">Open Final Pages ❤️</button>
+</div>
+</section>
+
+<!-- 19 -->
+<section class="page">
+<div class="bg"></div><div class="stars"></div>
+<div class="card">
+  <div class="moon">🌙✨</div>
+  <h2>Salmu, This One Is For You</h2>
+  <p>
+    পৃথিবীতে অনেক মানুষ আসে,<br>
+    কিন্তু সবাই একইভাবে মনে থাকে না।<br><br>
+    কিছু মানুষ নিজের অজান্তেই<br>
+    একটা সুন্দর memory হয়ে যায়।
+  </p>
+  <button onclick="next()">One Last Surprise 🎆</button>
+</div>
+</section>
+
+<!-- 20 -->
+<section class="page">
+<div class="bg"></div><div class="stars"></div>
+<div class="card">
+  <div style="font-size:70px">🎆🎂🎆</div>
+
+  <h1 class="final">HAPPY BIRTHDAY</h1>
+  <h1 class="final">SALMU ❤️</h1>
+
+  <p style="font-size:20px">
+    This little world was made specially for you.
+  </p>
+
+  <br>
+
+  <p>
+    তোমার হাসিটাই যেন সবসময় এমন সুন্দর থাকে।<br>
+    তোমার নতুন বছরটা হোক অসংখ্য সুন্দর মুহূর্তে ভরা। ✨
+  </p>
+
+  <br>
+
+  <h2>From Saju ❤️</h2>
+
+  <p class="small">
+    Your smile was the only thing this surprise needed. 🌸
+  </p>
+
+  <button onclick="fireworks();hearts()">Celebrate Again 🎆</button>
+</div>
+</section>
 
 <script>
 
-let current=1;
+let page=0;
+const pages=document.querySelectorAll(".page");
+const bar=document.getElementById("bar");
 
-/* PAGE CHANGE */
-function go(n){
-
-  document.getElementById("p"+current)
-    .classList.remove("active");
-
-  current=n;
-
-  document.getElementById("p"+current)
-    .classList.add("active");
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+function show(){
+  pages.forEach(p=>p.classList.remove("active"));
+  pages[page].classList.add("active");
+  bar.style.width=((page+1)/pages.length*100)+"%";
 }
 
+function next(){
+  if(page < pages.length-1){
+    page++;
+    show();
+  }
+  window.scrollTo(0,0);
+}
 
-/* START */
-function startBirthday(){
-
+function start(){
   const music=document.getElementById("music");
+  const voice=document.getElementById("voice");
 
-  music.volume=.5;
-
+  music.volume=.35;
   music.play().catch(()=>{});
 
-  celebrate();
+  voice.currentTime=0;
+  voice.play().catch(()=>{});
 
-  go(2);
+  page=1;
+  show();
+  hearts();
 }
 
-
-/* MUSIC AFTER FIRST TOUCH */
-document.addEventListener("click",()=>{
-  const music=document.getElementById("music");
-
-  if(music.paused){
-    music.play().catch(()=>{});
-  }
-},{once:true});
-
-
-/* FLOATING HEARTS */
-function hearts(){
-
-  setInterval(()=>{
-
-    const h=document.createElement("div");
-
-    h.className="float";
-
-    h.innerHTML=[
-      "💗",
-      "💕",
-      "💖",
-      "💞",
-      "🩷",
-      "✨"
-    ][Math.floor(Math.random()*6)];
-
-    h.style.left=Math.random()*100+"vw";
-
-    h.style.fontSize=
-      (16+Math.random()*25)+"px";
-
-    h.style.animationDuration=
-      (4+Math.random()*5)+"s";
-
-    document.body.appendChild(h);
-
-    setTimeout(()=>{
-      h.remove();
-    },9000);
-
-  },500);
-}
-
-
-/* CELEBRATION */
 function celebrate(){
-
-  for(let i=0;i<40;i++){
-
+  for(let i=0;i<35;i++){
     setTimeout(()=>{
-
       const e=document.createElement("div");
-
-      e.className="float";
-
-      e.innerHTML=[
-        "🎉",
-        "🎈",
-        "💗",
-        "✨",
-        "🎊",
-        "🌸"
-      ][Math.floor(Math.random()*6)];
-
+      e.className="particle";
+      e.innerHTML=["🎉","🎈","❤️","✨","🌸","🎂"][Math.floor(Math.random()*6)];
       e.style.left=Math.random()*100+"vw";
-
-      e.style.fontSize=
-        (20+Math.random()*25)+"px";
-
-      e.style.animationDuration=
-        (2+Math.random()*3)+"s";
-
-      document.body.appendChild(e);
-
-      setTimeout(()=>{
-        e.remove();
-      },6000);
-
-    },i*60);
+      e.style.animationDuration=(2+Math.random()*2)+"s";
+      document.getElementById("fx").appendChild(e);
+      setTimeout(()=>e.remove(),4000);
+    },i*70);
   }
 }
 
-
-/* GIFT */
-function openGift(){
-
-  document.getElementById("giftMessage")
-    .style.display="block";
-
-  celebrate();
-}
-
-
-/* WISH */
-function wish(){
-
-  celebrate();
-
-  alert("✨ Wish saved! May your beautiful wishes come true. 🎂💗");
-
-  go(8);
-}
-
-
-/* FLOWER RAIN */
-function flowerRain(){
-
-  const list=[
-    "🌸",
-    "🌷",
-    "🌹",
-    "🌺",
-    "💐",
-    "🌼",
-    "🦋"
-  ];
-
-  for(let i=0;i<45;i++){
-
+function hearts(){
+  for(let i=0;i<30;i++){
     setTimeout(()=>{
-
-      const f=document.createElement("div");
-
-      f.className="float";
-
-      f.innerHTML=
-        list[Math.floor(Math.random()*list.length)];
-
-      f.style.left=Math.random()*100+"vw";
-
-      f.style.animationDuration=
-        (3+Math.random()*4)+"s";
-
-      document.body.appendChild(f);
-
-      setTimeout(()=>{
-        f.remove();
-      },7000);
-
+      const e=document.createElement("div");
+      e.className="particle";
+      e.innerHTML=["❤️","💖","💕","💗","💓"][Math.floor(Math.random()*5)];
+      e.style.left=Math.random()*100+"vw";
+      e.style.animationDuration=(2+Math.random()*2)+"s";
+      document.getElementById("fx").appendChild(e);
+      setTimeout(()=>e.remove(),4000);
     },i*80);
   }
 }
 
-
-/* RESTART */
-function restart(){
-
-  document.getElementById("p"+current)
-    .classList.remove("active");
-
-  current=1;
-
-  document.getElementById("p1")
-    .classList.add("active");
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-  const music=document.getElementById("music");
-
-  music.currentTime=0;
-
-  music.play().catch(()=>{});
+function balloons(){
+  celebrate();
 }
 
+function flowers(){
+  for(let i=0;i<35;i++){
+    setTimeout(()=>{
+      const e=document.createElement("div");
+      e.className="particle";
+      e.innerHTML=["🌹","🌷","🌸","🌺","🌼"][Math.floor(Math.random()*5)];
+      e.style.left=Math.random()*100+"vw";
+      e.style.animationDuration=(2+Math.random()*2)+"s";
+      document.getElementById("fx").appendChild(e);
+      setTimeout(()=>e.remove(),4000);
+    },i*60);
+  }
+}
 
-/* START FLOATING EFFECT */
-hearts();
+function openGift(){
+  document.getElementById("giftText").innerHTML=
+  "🎁 ভিতরে একটা message আছে...<br><br><b>তুমি আজকের দিনের সবচেয়ে special person। ❤️</b>";
+
+  document.getElementById("giftNext").style.display="inline-block";
+  celebrate();
+}
+
+function finalGift(){
+  document.getElementById("finalGiftText").innerHTML=
+  "🎁 Surprise unlocked!<br><br><b>শেষের দুইটা page শুধু তোমার জন্য। ❤️</b>";
+
+  document.getElementById("finalGiftBtn").style.display="inline-block";
+  fireworks();
+}
+
+function wish(){
+  for(let i=0;i<20;i++){
+    const e=document.createElement("div");
+    e.className="particle";
+    e.innerHTML="✨";
+    e.style.left=Math.random()*100+"vw";
+    e.style.top=Math.random()*100+"vh";
+    document.getElementById("fx").appendChild(e);
+    setTimeout(()=>e.remove(),3000);
+  }
+}
+
+function starsRain(){
+  wish();
+}
+
+function fireworks(){
+
+  for(let i=0;i<18;i++){
+    setTimeout(()=>{
+      const e=document.createElement("div");
+      e.className="firework";
+      e.innerHTML=["🎆","🎇","✨","💥"][Math.floor(Math.random()*4)];
+      e.style.left=(10+Math.random()*80)+"vw";
+      e.style.top=(10+Math.random()*65)+"vh";
+
+      document.getElementById("fx").appendChild(e);
+
+      setTimeout(()=>e.remove(),1800);
+    },i*130);
+  }
+
+  celebrate();
+}
+
+function typeMessage(){
+
+  const text=
+  "Salmu... এই পুরো surprise-এর প্রতিটা page-এর পেছনে একটা ছোট্ট উদ্দেশ্য ছিল—তোমাকে হাসানো। আজকের দিনটা তোমার, তাই তোমার জন্য একটা সুন্দর memory রেখে যেতে চেয়েছিলাম। ❤️";
+
+  const box=document.getElementById("typing");
+
+  box.innerHTML="";
+  let i=0;
+
+  const timer=setInterval(()=>{
+    box.innerHTML+=text[i];
+    i++;
+
+    if(i>=text.length){
+      clearInterval(timer);
+    }
+  },45);
+}
 
 </script>
 
